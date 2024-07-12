@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Price</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .icon { width: 1rem; height: 1rem; margin-right: 0.25rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-100">
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold">Best Price</h1>
+                <input id="searchInput" type="text" placeholder="Search Best Price" class="w-1/3 px-4 py-2 rounded-full bg-blue-800 text-white placeholder-blue-300">
+            </div>
+        </div>
+        <nav class="bg-blue-800">
+            <div class="container mx-auto px-4">
+                <ul class="flex justify-between py-2" id="navList">
+                    <!-- Navigation items will be inserted here by JavaScript -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="bg-yellow-400 text-blue-900 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h2 class="text-xl font-bold">Offer of the Week: 50% off all Electronics!</h2>
+            <button class="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800"><a href="offer.html">See Offer</button>
+        </div>
+    </div>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <h2 id="mainTitle" class="text-2xl font-bold mb-6">Home</h2>
+        <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Product cards will be inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About Best Price</h3>
+                    <p>Your one-stop shop for the best deals on everything you need.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-blue-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Returns & Refunds</a></li>
+                        <li><a href="#" class="hover:text-blue-300">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-blue-300">Facebook</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Twitter</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p>&copy; 2024 Best Price. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navItems = [
+            { name: 'Offer', icon: 'offer' },
+            { name: 'Technology', icon: 'smartphone' },
+            { name: 'Fashion', icon: 'shopping-bag' },
+            { name: 'Toys', icon: 'truck' },
+            { name: 'Travel', icon: 'plane' },
+            { name: 'Rudeness', icon: 'frown' },
+            { name: 'Tiny Home', icon: 'home' },
+        ];
+
+         const products = {
+            Offer: [
+                { name: "Smart Speaker", details: "Voice-controlled home assistant", image: "300/200", link: "https://amzn.to/3WhuwJ2" },
+                { name: "Coffee Maker", details: "Programmable, 12-cup capacity", image: "300/200", link: "https://amzn.to/3xYzABC" },
+                { name: "Air Purifier", details: "HEPA filter, 3-speed fan", image: "300/200", link: "https://amzn.to/3zZzXYZ" },
+            ],
+            Technology: [
+                { name: "Smartphone", details: "Latest model, 5G capable", image: "300/200", link: "https://amzn.to/4aAaBbC" },
+                { name: "Laptop", details: "Ultra-thin, 16GB RAM", image: "300/200", link: "https://amzn.to/4bBcCdD" },
+                { name: "Wireless Earbuds", details: "Noise-cancelling, 24h battery", image: "300/200", link: "https://amzn.to/4cCdDeE" },
+            ],
+            Fashion: [
+                { name: "Denim Jacket", details: "Classic style, all sizes", image: "300/200", link: "https://amzn.to/4dDeFfG" },
+                { name: "Running Shoes", details: "Lightweight, cushioned sole", image: "300/200", link: "https://amzn.to/4eEfGgH" },
+                { name: "Sunglasses", details: "UV protection, polarized", image: "300/200", link: "https://amzn.to/4fFgHhI" },
+            ],
+            Toys: [
+                { name: "Building Blocks", details: "500 pieces, ages 5+", image: "300/200", link: "https://amzn.to/4gGhIiJ" },
+                { name: "Remote Control Car", details: "Off-road capable, rechargeable", image: "300/200", link: "https://amzn.to/4hHiJjK" },
+                { name: "Board Game", details: "Family-friendly, 2-6 players", image: "300/200", link: "https://amzn.to/4iIjKkL" },
+            ],
+            Travel: [
+                { name: "Luggage Set", details: "3 pieces, hardshell", image: "300/200", link: "https://amzn.to/4jJkLlM" },
+                { name: "Travel Pillow", details: "Memory foam, machine washable", image: "300/200", link: "https://amzn.to/4kKlMmN" },
+                { name: "Portable Charger", details: "20000mAh, fast charging", image: "300/200", link: "https://amzn.to/4lLmNnO" },
+            ],
+            Rudeness: [
+                { name: "Joke Book", details: "1001 pranks and gags", image: "300/200", link: "https://amzn.to/4mMnOoP" },
+                { name: "Whoopee Cushion", details: "Classic prank item", image: "300/200", link: "https://amzn.to/4nNoPpQ" },
+                { name: "Funny T-Shirt", details: "Sarcastic slogans, all sizes", image: "300/200", link: "https://amzn.to/4oOpQqR" },
+            ],
+            'Tiny Home': [
+                { name: "Portable Prefabricated Tiny Home 19x20ft", details: "Mobile Expandable folding house with bathroom, 20ft Container Design for Guest House, Site Office, Storage Shed, Guard House, with Heater", image: "tinyhome/8.jpg", link: "https://amzn.to/3WhuwJ2" },
+                { name: "Detachable Prefabricated", details: "Luxury Villa Portable Foldable Expandable Container House 40 FT Home, 11.8*6.3*2.48", image: "tinyhome/9.jpg", link: "https://amzn.to/4cW1CUg" },
+                { name: "Expandable Tiny Houses", details: "Modern Designed, Spacious, Waterproof Expandable Container Houses, empty inside so design it with your own choice", image: "tinyhome/10.jpg", link: "https://amzn.to/4cxUsFT" },
+                { name: "Lifetime for only $2.084 USD", details: "Outdoor Storage Shed, 8 x 15 Foot, Desert Sand", image: "tinyhome/11.jpg", link: "https://amzn.to/3xPqK0e" },
+                { name: "Expandable Plastic Prefab House", details: "Modern Sturdy Steel Storage House with Lockable Door and Window(15 x 20FT)", image: "tinyhome/12.jpg", link: "https://amzn.to/4eUjOzz" },
+                { name: "Portable Mobile Home for Small Family", details: "Storage Sheds, Garden Houses, Container House with 2 Rooms 1 Kitchen 1 Bathroom Toilet Attached, 20 ft Expandable House, Frosty white", image: "tinyhome/13.jpg", link: "https://amzn.to/3WhW7dk" },
+                { name: "Outdoor Storage Shed", details: "Modern Sturdy Steel Storage House with Lockable Door and Window(19 x 20FT)", image: "tinyhome/14.jpg", link: "https://amzn.to/4cRc6V1" },
+                { name: "Prefab Tiny Home", details: "White, Mobile House with Bathroom & Kitchen, Galvanized Frame, Waterproof, Modern Style", image: "tinyhome/15.jpg", link: "https://amzn.to/3zFhAUI" },
+                { name: "Prefabricated Tiny Home 13x20ft", details: "Mobile Expandable Plastic Prefab House for Hotel, Booth, Office, Guard House, Shop, Villa, Warehouse, Workshop (with Restroom)", image: "tinyhome/15.jpg", link: "https://amzn.to/45WdX8T" },
+            ],
+        };
+
+        let activeTab = 'Home';
+        const searchInput = document.getElementById('searchInput');
+        const mainTitle = document.getElementById('mainTitle');
+        const productGrid = document.getElementById('productGrid');
+        const navList = document.getElementById('navList');
+
+        function renderNavigation() {
+            navList.innerHTML = navItems.map(item => `
+                <li class="flex items-center">
+                    <button onclick="setActiveTab('${item.name}')" class="flex items-center text-sm hover:text-blue-300">
+                        <i data-lucide="${item.icon}" class="icon"></i>
+                        ${item.name}
+                    </button>
+                </li>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function renderProducts(filteredProducts) {
+            productGrid.innerHTML = filteredProducts.map(product => `
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <img src="/api/placeholder/${product.image}" alt="${product.name}" class="w-full h-48 object-cover mb-4">
+                    <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
+                    <p class="text-gray-600 mb-4">${product.details}</p>
+                    <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        View Details
+                    </a>
+                </div>
+            `).join('');
+        }
+
+        function setActiveTab(tab) {
+            activeTab = tab;
+            mainTitle.textContent = tab;
+            renderProducts(products[tab]);
+            searchInput.value = '';
+        }
+
+        function searchProducts(term) {
+            const allProducts = Object.values(products).flat();
+            const filteredProducts = term
+                ? allProducts.filter(product => 
+                    product.name.toLowerCase().includes(term.toLowerCase()) ||
+                    product.details.toLowerCase().includes(term.toLowerCase())
+                )
+                : products[activeTab];
+            mainTitle.textContent = term ? 'Search Results' : activeTab;
+            renderProducts(filteredProducts);
+        }
+
+        searchInput.addEventListener('input', (e) => searchProducts(e.target.value));
+
+        renderNavigation();
+        setActiveTab('Home');
+    </script>
+</body>
+</html>
