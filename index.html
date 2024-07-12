@@ -61,7 +61,7 @@
                     <ul>
                         <li><a href="#" class="hover:text-blue-300">Facebook</a></li>
                         <li><a href="#" class="hover:text-blue-300">Twitter</a></li>
-                        <li><a href="#" class="hover:text-blue-300">Instagram</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Newsletter</a></li>
                     </ul>
                 </div>
             </div>
@@ -82,41 +82,41 @@
             { name: 'Tiny Home', icon: 'home' },
         ];
 
-        const products = {
+         const products = {
             Home: [
-                { name: "Smart Speaker", details: "Voice-controlled home assistant", image: "300/200" },
-                { name: "Coffee Maker", details: "Programmable, 12-cup capacity", image: "300/200" },
-                { name: "Air Purifier", details: "HEPA filter, 3-speed fan", image: "300/200" },
+                { name: "Smart Speaker", details: "Voice-controlled home assistant", image: "300/200", link: "https://amzn.to/3WhuwJ2" },
+                { name: "Coffee Maker", details: "Programmable, 12-cup capacity", image: "300/200", link: "https://amzn.to/3xYzABC" },
+                { name: "Air Purifier", details: "HEPA filter, 3-speed fan", image: "300/200", link: "https://amzn.to/3zZzXYZ" },
             ],
             Technology: [
-                { name: "Smartphone", details: "Latest model, 5G capable", image: "300/200" },
-                { name: "Laptop", details: "Ultra-thin, 16GB RAM", image: "300/200" },
-                { name: "Wireless Earbuds", details: "Noise-cancelling, 24h battery", image: "300/200" },
+                { name: "Smartphone", details: "Latest model, 5G capable", image: "300/200", link: "https://amzn.to/4aAaBbC" },
+                { name: "Laptop", details: "Ultra-thin, 16GB RAM", image: "300/200", link: "https://amzn.to/4bBcCdD" },
+                { name: "Wireless Earbuds", details: "Noise-cancelling, 24h battery", image: "300/200", link: "https://amzn.to/4cCdDeE" },
             ],
             Fashion: [
-                { name: "Denim Jacket", details: "Classic style, all sizes", image: "300/200" },
-                { name: "Running Shoes", details: "Lightweight, cushioned sole", image: "300/200" },
-                { name: "Sunglasses", details: "UV protection, polarized", image: "300/200" },
+                { name: "Denim Jacket", details: "Classic style, all sizes", image: "300/200", link: "https://amzn.to/4dDeFfG" },
+                { name: "Running Shoes", details: "Lightweight, cushioned sole", image: "300/200", link: "https://amzn.to/4eEfGgH" },
+                { name: "Sunglasses", details: "UV protection, polarized", image: "300/200", link: "https://amzn.to/4fFgHhI" },
             ],
             Toys: [
-                { name: "Building Blocks", details: "500 pieces, ages 5+", image: "300/200" },
-                { name: "Remote Control Car", details: "Off-road capable, rechargeable", image: "300/200" },
-                { name: "Board Game", details: "Family-friendly, 2-6 players", image: "300/200" },
+                { name: "Building Blocks", details: "500 pieces, ages 5+", image: "300/200", link: "https://amzn.to/4gGhIiJ" },
+                { name: "Remote Control Car", details: "Off-road capable, rechargeable", image: "300/200", link: "https://amzn.to/4hHiJjK" },
+                { name: "Board Game", details: "Family-friendly, 2-6 players", image: "300/200", link: "https://amzn.to/4iIjKkL" },
             ],
             Travel: [
-                { name: "Luggage Set", details: "3 pieces, hardshell", image: "300/200" },
-                { name: "Travel Pillow", details: "Memory foam, machine washable", image: "300/200" },
-                { name: "Portable Charger", details: "20000mAh, fast charging", image: "300/200" },
+                { name: "Luggage Set", details: "3 pieces, hardshell", image: "300/200", link: "https://amzn.to/4jJkLlM" },
+                { name: "Travel Pillow", details: "Memory foam, machine washable", image: "300/200", link: "https://amzn.to/4kKlMmN" },
+                { name: "Portable Charger", details: "20000mAh, fast charging", image: "300/200", link: "https://amzn.to/4lLmNnO" },
             ],
             Rudeness: [
-                { name: "Joke Book", details: "1001 pranks and gags", image: "300/200" },
-                { name: "Whoopee Cushion", details: "Classic prank item", image: "300/200" },
-                { name: "Funny T-Shirt", details: "Sarcastic slogans, all sizes", image: "300/200" },
+                { name: "Joke Book", details: "1001 pranks and gags", image: "300/200", link: "https://amzn.to/4mMnOoP" },
+                { name: "Whoopee Cushion", details: "Classic prank item", image: "300/200", link: "https://amzn.to/4nNoPpQ" },
+                { name: "Funny T-Shirt", details: "Sarcastic slogans, all sizes", image: "300/200", link: "https://amzn.to/4oOpQqR" },
             ],
             'Tiny Home': [
-                { name: "Folding Table", details: "Space-saving, seats 4", image: "300/200" },
-                { name: "Storage Ottoman", details: "Multifunctional furniture", image: "300/200" },
-                { name: "Wall-mounted Desk", details: "Foldable, compact workspace", image: "300/200" },
+                { name: "Folding Table", details: "Space-saving, seats 4", image: "300/200", link: "https://amzn.to/4pPqRrS" },
+                { name: "Storage Ottoman", details: "Multifunctional furniture", image: "300/200", link: "https://amzn.to/4qQrSsT" },
+                { name: "Wall-mounted Desk", details: "Foldable, compact workspace", image: "300/200", link: "https://amzn.to/4rRsTtU" },
             ],
         };
 
@@ -144,7 +144,7 @@
                     <img src="/api/placeholder/${product.image}" alt="${product.name}" class="w-full h-48 object-cover mb-4">
                     <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
                     <p class="text-gray-600 mb-4">${product.details}</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                         View Details
                     </a>
                 </div>
